@@ -31,7 +31,7 @@ namespace COMP003A.Assignment2
 
             // Prompt the user to enter the product price
             Console.Write("What is the price of the item you're interested in? ");
-            productPrice = int.Parse(Console.ReadLine()); // Convert and assign the user's input to productPrice
+            productPrice = double.Parse(Console.ReadLine()); // Convert and assign the user's input to productPrice
 
             // Prompt the user to indicate if they are a student
             Console.Write("Are you a student? (true/false): ");
@@ -39,16 +39,15 @@ namespace COMP003A.Assignment2
 
             // Perform calculations
             int futureAge = userAge + 5; // Calculate the user's age in 5 years
-            bool isAdult = userAge >= 18; // Determine if the user is 18 or older
-            bool isAdultStudent = isStudent && isAdult; // Determine if the user is both a student and an adult
 
             Console.WriteLine($"\n\n\n**************************************************");
             // Display outputs using string interpolation
             Console.WriteLine($"Hello, {userFirstName} {userLastName}!"); // Greet the user with their name
-            Console.WriteLine($"You are currently {userAge} years old.");
+            Console.WriteLine($"Your current age is {userAge}.");
             Console.WriteLine($"In 5 years, you will be {futureAge}."); // Display current and future age
-            Console.WriteLine($"Are you 18 or older? {isAdult}"); // Display if the user is 18 or older
-            Console.WriteLine($"Are you both a student and 18 or older? {isAdultStudent}"); // Display if the user is both a student and an adult
+            Console.WriteLine($"The original price of the item is ${productPrice.ToString("N")}."); // Display the given price of the product
+            Console.WriteLine($"As a student, your discount price is ${(productPrice * 0.9).ToString("N")}.");
+            Console.WriteLine($"As a senior citizen, your discount would be ${(productPrice * 0.8).ToString("N")}."); // Display if the user is both a student and an adult
             Console.WriteLine($"**************************************************");
         }
     }
